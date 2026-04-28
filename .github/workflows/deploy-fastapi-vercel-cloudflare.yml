@@ -121,7 +121,7 @@ jobs:
           printf "%s" "${{ github.event.repository.name }}" | $V_CMD env add NAME_SERVICE production --force || true
 
 
-          printf "%s" "${{ steps.doppler.outputs.DATA_PIPELINE_VBPL_DATABASE_URL }}" | $V_CMD env add DATA_PIPELINE_VBPL_DATABASE_URL production --force || true
+          printf "%s" "${{ steps.doppler.outputs.DATA_PIPELINE_VBPLNEW_DATABASE_URL }}" | $V_CMD env add DATA_PIPELINE_VBPLNEW_DATABASE_URL production --force || true
           printf "%s" "${{ steps.doppler.outputs.SUPABASE_PROJECT_ID }}" | $V_CMD env add SUPABASE_PROJECT_ID production --force || true
 
       - name: Deploy to Vercel

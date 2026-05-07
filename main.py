@@ -14,6 +14,7 @@ app = FastAPI(
     lifespan=lifespan,
     title=f"{env.SERVICE_NAME} ({env.ENVIRONMENT})",
     description=env.DESCRIPTION,
+    root_path=f"/{env.SERVICE_NAME}",
     swagger_ui_parameters={"persistAuthorization": True},
 )
 
@@ -28,13 +29,16 @@ app.add_middleware(
 app.add_middleware(LogRequestAndResponseMiddleware)
 
 
-app.include_router(index_router, prefix="/api")
+app.include_router(index_router)
 
 
 @app.get("/")
 @log_function
 def root():
-    return {"message": "Hello World", "docs": "/docs"}
+    return {
+        "message": "Hello World",
+        "docs": f"/{env.SERVICE_NAME}/docs",
+    }
 
 
 app.mount(

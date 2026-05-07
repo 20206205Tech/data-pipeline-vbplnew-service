@@ -7,8 +7,8 @@ logger.info("Loading environment variables...")
 
 DATA_PIPELINE_VBPLNEW_DATABASE_URL = env.str("DATA_PIPELINE_VBPLNEW_DATABASE_URL")
 DATABASE_URL = DATA_PIPELINE_VBPLNEW_DATABASE_URL
-SERVICE_NAME = "data-pipeline-service"
-PORT = env.int("SERVICE_PORT", 30000)
+SERVICE_NAME = "data-pipeline-vbplnew-service"
+PORT = env.int("SERVICE_PORT", 51002)
 
 
 ENVIRONMENT = env.str("ENVIRONMENT", "production")

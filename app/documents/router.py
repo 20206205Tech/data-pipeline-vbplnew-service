@@ -77,7 +77,7 @@ def get_document_info(
 
 
 @log_function
-@router.get("/doc-types", response_model=BaseResponse[Any])
+@router.get("/doc-types", response_model=BaseResponse[Any], tags=["public"])
 def get_doc_types(db: Session = Depends(get_db)):
     """Lấy danh sách loại văn bản"""
     data = service.get_doc_types(db)
@@ -87,7 +87,7 @@ def get_doc_types(db: Session = Depends(get_db)):
 
 
 @log_function
-@router.get("/eff-statuses", response_model=BaseResponse[Any])
+@router.get("/eff-statuses", response_model=BaseResponse[Any], tags=["public"])
 def get_eff_statuses(db: Session = Depends(get_db)):
     """Lấy danh sách trạng thái hiệu lực"""
     data = service.get_eff_statuses(db)
@@ -97,7 +97,7 @@ def get_eff_statuses(db: Session = Depends(get_db)):
 
 
 @log_function
-@router.get("/majors", response_model=BaseResponse[Any])
+@router.get("/majors", response_model=BaseResponse[Any], tags=["public"])
 def get_majors(db: Session = Depends(get_db)):
     """Lấy danh sách lĩnh vực"""
     data = service.get_majors(db)

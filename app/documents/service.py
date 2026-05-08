@@ -206,13 +206,18 @@ def get_eff_statuses(db: Session):
 
 @log_function
 def get_majors(db: Session):
-    """Lấy danh sách lĩnh vực cùng số lượng"""
+    """Lấy danh sách lĩnh vực cùng số lượng (Gộp theo code)"""
     query = text(
         """
-        SELECT m.id, m.code, m.name, m.short_name, COUNT(dm.document_id) as total_count
+        SELECT
+            MAX(m.id) as id,
+            m.code,
+            m.name,
+            m.short_name,
+            COUNT(DISTINCT dm.document_id) as total_count
         FROM dim_major m
         LEFT JOIN document_majors dm ON m.id = dm.major_id
-        GROUP BY m.id, m.code, m.name, m.short_name
+        GROUP BY m.code, m.name, m.short_name
         ORDER BY m.name ASC
         """
     )

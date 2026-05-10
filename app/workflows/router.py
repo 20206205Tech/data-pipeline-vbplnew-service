@@ -2,8 +2,8 @@ from typing import Any
 
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
+from tech_auth import require_admin
 
-from app.auth.dependencies import require_admin
 from app.workflows import service
 from common.response.base_response import BaseResponse
 from database.config import get_db

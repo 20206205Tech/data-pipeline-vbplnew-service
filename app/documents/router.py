@@ -2,8 +2,8 @@ from typing import Any, Optional
 
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
+from tech_auth import get_current_user, require_admin
 
-from app.auth.dependencies import get_current_user, require_admin
 from app.documents import service
 from common.response.base_response import BaseResponse
 from database.config import get_db

@@ -13,7 +13,8 @@ SERVICE_NAME = "data-pipeline-vbplnew-service"
 PORT = env.int("SERVICE_PORT", 51002)
 
 
-DATA_PIPELINE_VBPLNEW_DATABASE_URL = env.str("DATA_PIPELINE_VBPLNEW_DATABASE_URL")
+DATA_PIPELINE_VBPLNEW_DATABASE_URL = env.str(
+    "DATA_PIPELINE_VBPLNEW_DATABASE_URL")
 DATABASE_URL = DATA_PIPELINE_VBPLNEW_DATABASE_URL
 
 
@@ -27,7 +28,7 @@ AUDIENCE = "authenticated"
 DESCRIPTION = f"""
 # Chào mừng đến với {SERVICE_NAME} ({ENVIRONMENT})
 
-* [Google](https://{SUPABASE_PROJECT_ID}.supabase.co/auth/v1/authorize?provider=google)
+* [Google](https://{SUPABASE_PROJECT_ID}.supabase.co/auth/v1/authorize?provider=google&redirect_to=https://20206205tech.github.io/auth-callback)
 * [Database](https://console.neon.tech/app/org-still-feather-82034197/projects?q={SERVICE_NAME})
 * [Local](http://localhost:{PORT})
 * [Dev](https://dev-{SERVICE_NAME}.20206205.tech)

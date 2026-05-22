@@ -4,17 +4,18 @@ requires-python = ">=3.13"
 
 [[package]]
 name = "20206205tech-python-auth"
-version = "0.0.0"
+version = "0.3.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
+    { name = "environs" },
     { name = "fastapi" },
     { name = "loguru" },
     { name = "pydantic" },
     { name = "pyjwt", extra = ["crypto"] },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/3e/00/775c29d45e6b97779a1718abf7b7fe0e004fc2b033de9756b24ce9904bd7/20206205tech_python_auth-0.0.0.tar.gz", hash = "sha256:ea08338151fcd4693244eeb72bc2d4ecc2b0bfef0bd530364811ae5516268044", size = 33690, upload-time = "2026-05-10T04:36:26.204Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c2/1e/8266e5d9f9ef7c02796f1fefcf4dec0438e1f10031ece048f352a40d2130/20206205tech_python_auth-0.3.0.tar.gz", hash = "sha256:053a83ba3a3cf764a5163a57ab984ae60be3fe587418bde8acc9eef8b70bb13d", size = 35118, upload-time = "2026-05-21T17:21:25.49Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8e/91/00399e8361821532d32761a0d963bd732b35ff77906e769e89578da0ac25/20206205tech_python_auth-0.0.0-py3-none-any.whl", hash = "sha256:5d4104c435c6cb50e52fbd43aedf5acdad55a50b2a6f2317544cc2d117a2b2ae", size = 3209, upload-time = "2026-05-10T04:36:25.093Z" },
+    { url = "https://files.pythonhosted.org/packages/d1/16/416a6e5bca8830fe53e2cc027a160c112136d04548a14a51cc79a16719d4/20206205tech_python_auth-0.3.0-py3-none-any.whl", hash = "sha256:1b948c7c3b04f8073f174427a1d2d80f99909408abd5f07ae25000fe4a64ac46", size = 3584, upload-time = "2026-05-21T17:21:24.384Z" },
 ]
 
 [[package]]
@@ -226,7 +227,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "20206205tech-python-auth", specifier = ">=0.0.0" },
+    { name = "20206205tech-python-auth", specifier = ">=0.3.0" },
     { name = "alembic", specifier = ">=1.18.4" },
     { name = "cryptography", specifier = ">=46.0.6" },
     { name = "environs", specifier = ">=15.0.0" },

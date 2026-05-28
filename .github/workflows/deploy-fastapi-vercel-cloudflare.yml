@@ -123,6 +123,7 @@ jobs:
 
 
           printf "%s" "${{ steps.doppler.outputs.DATA_PIPELINE_VBPLNEW_DATABASE_URL }}" | $V_CMD env add DATA_PIPELINE_VBPLNEW_DATABASE_URL production --force || true
+          printf "%s" "${{ steps.doppler.outputs.HONEYCOMB_API_KEY }}" | $V_CMD env add HONEYCOMB_API_KEY production --force || true
           printf "%s" "${{ steps.doppler.outputs.SUPABASE_PROJECT_ID }}" | $V_CMD env add SUPABASE_PROJECT_ID production --force || true
 
       - name: Deploy to Vercel

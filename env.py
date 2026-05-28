@@ -11,6 +11,7 @@ RELOAD = True if ENVIRONMENT == "development" else False
 
 SERVICE_NAME = "data-pipeline-vbplnew-service"
 PORT = env.int("SERVICE_PORT", 51002)
+HOST = "0.0.0.0"
 
 
 DATA_PIPELINE_VBPLNEW_DATABASE_URL = env.str("DATA_PIPELINE_VBPLNEW_DATABASE_URL")
@@ -27,12 +28,19 @@ AUDIENCE = "authenticated"
 DESCRIPTION = f"""
 # Chào mừng đến với {SERVICE_NAME} ({ENVIRONMENT})
 
-* [Google](https://{SUPABASE_PROJECT_ID}.supabase.co/auth/v1/authorize?provider=google&redirect_to=https://20206205tech.github.io/auth-callback)
+* [Đăng nhập Google](https://{SUPABASE_PROJECT_ID}.supabase.co/auth/v1/authorize?provider=google&redirect_to=https://20206205tech.github.io/auth-callback)
 * [Database](https://console.neon.tech/app/org-still-feather-82034197/projects?q={SERVICE_NAME})
 * [Local](http://localhost:{PORT})
 * [Dev](https://dev-{SERVICE_NAME}.20206205.tech)
+* [docs](http://localhost:{PORT}/{SERVICE_NAME}/docs)
+* [redoc](http://localhost:{PORT}/{SERVICE_NAME}/redoc)
+* [voyager](http://localhost:{PORT}/{SERVICE_NAME}/voyager)
+* [scalar](http://localhost:{PORT}/{SERVICE_NAME}/scalar)
 
 """.strip()
 
 
 logger.success(f"DESCRIPTION: \n{DESCRIPTION}")
+
+
+HONEYCOMB_API_KEY = env.str("HONEYCOMB_API_KEY")
